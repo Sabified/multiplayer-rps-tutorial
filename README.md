@@ -3,7 +3,7 @@
 
 ## Tutorials
 
-* [tutorial](/tutorial)
+* [tutorial](/multiplayer-rps-tutorial/tutorial)
 
 ## Use as Extension
 
