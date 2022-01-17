@@ -3,7 +3,8 @@
 
 ## Tutorials
 
-* [tutorial](/multiplayer-rps-tutorial/tutorial) [start] (https://makecode.microbit.org/#tutorial:github:sabified/multiplayer-rps-tutorial/tutorial)
+* [tutorial](/multiplayer-rps-tutorial/tutorial) 
+* [start] (https://makecode.microbit.org/#tutorial:github:sabified/multiplayer-rps-tutorial/tutorial)
 
 ## Use as Extension
 
