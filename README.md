@@ -1,6 +1,10 @@
 
 > Open this page at [https://sabified.github.io/multiplayer-rps-tutorial/](https://sabified.github.io/multiplayer-rps-tutorial/)
 
+## Tutorials
+
+* [tutorial](/tutorial)
+
 ## Use as Extension
 
 This repository can be added as an **extension** in MakeCode.
