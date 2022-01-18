@@ -6,7 +6,7 @@ First we set some ground variables
 Make 3 new variables and call them: hand_set, hand and ready
 
 ```blocks
-let hand = ""
+let hand = 0
 let hand_set = 0
 let ready = 0
 ready = 0
@@ -18,7 +18,7 @@ You set a radio group (can be anything)
 and a main menu screen with "show leds" and add it in the "on start"
 
 ```blocks
-let hand = ""
+let hand = 0
 let hand_set = 0
 let ready = 0
 ready = 0
@@ -268,7 +268,7 @@ function set_hand () {
 ```
 ## Step 17
 
-Then in the first "If" block you put set hand to "0" in a string
+Then in the first "If" block you put set hand to "0".
 Do the same in the second but change the number to "1"
 And the same in the third but change it to "2"
 
@@ -284,7 +284,7 @@ function set_hand () {
                 . # # # .
                 . . . . .
                 `)
-            hand = "0"
+            hand = 0
             hand_set = 1
         } else if (input.isGesture(Gesture.TiltRight)) {
             basic.showLeds(`
@@ -294,7 +294,7 @@ function set_hand () {
                 # # . # .
                 # # . . #
                 `)
-            hand = "1"
+            hand = 1
             hand_set = 1
         } else if (input.isGesture(Gesture.LogoUp)) {
             basic.showLeds(`
@@ -304,7 +304,7 @@ function set_hand () {
                 . # # # .
                 . # # # .
                 `)
-            hand = "2"
+            hand = 2
             hand_set = 1
         }
     }
@@ -331,7 +331,7 @@ function set_hand () {
                 . # # # .
                 . . . . .
                 `)
-            hand = "0"
+            hand = 0
             hand_set = 1
         } else if (input.isGesture(Gesture.TiltRight)) {
             basic.showLeds(`
@@ -341,7 +341,7 @@ function set_hand () {
                 # # . # .
                 # # . . #
                 `)
-            hand = "1"
+            hand = 1
             hand_set = 1
         } else if (input.isGesture(Gesture.LogoUp)) {
             basic.showLeds(`
@@ -351,7 +351,7 @@ function set_hand () {
                 . # # # .
                 . # # # .
                 `)
-            hand = "2"
+            hand = 2
             hand_set = 1
         }
     }
@@ -386,7 +386,7 @@ radio.onReceivedString(function (receivedString) {
 
 ## Step 19
 
-Now you go back to the "onReceivedString" block and add two more "If" blocks
+Now you go back to the "onReceivedString" block and add one more "If" block
 
 ```blocks
 radio.onReceivedString(function (receivedString) {
@@ -403,9 +403,6 @@ radio.onReceivedString(function (receivedString) {
             radio.sendString("start-dir")
             Start()
         }
-    }
-    if (0 == 0) {
-        
     }
     if (0 == 0) {
         
@@ -434,7 +431,7 @@ function set_hand () {
                 . # # # .
                 . . . . .
                 `)
-            hand = "0"
+            hand = 0
             hand_set = 1
         } else if (input.isGesture(Gesture.TiltRight)) {
             basic.showLeds(`
@@ -444,7 +441,7 @@ function set_hand () {
                 # # . # .
                 # # . . #
                 `)
-            hand = "1"
+            hand = 1
             hand_set = 1
         } else if (input.isGesture(Gesture.LogoUp)) {
             basic.showLeds(`
@@ -454,7 +451,7 @@ function set_hand () {
                 . # # # .
                 . # # # .
                 `)
-            hand = "2"
+            hand = 2
             hand_set = 1
         }
     }
@@ -515,7 +512,7 @@ function set_hand () {
                 . # # # .
                 . . . . .
                 `)
-            hand = "0"
+            hand = 0
             hand_set = 1
         } else if (input.isGesture(Gesture.TiltRight)) {
             basic.showLeds(`
@@ -525,7 +522,7 @@ function set_hand () {
                 # # . # .
                 # # . . #
                 `)
-            hand = "1"
+            hand = 1
             hand_set = 1
         } else if (input.isGesture(Gesture.LogoUp)) {
             basic.showLeds(`
@@ -535,7 +532,7 @@ function set_hand () {
                 . # # # .
                 . # # # .
                 `)
-            hand = "2"
+            hand = 2
             hand_set = 1
         }
     }
@@ -545,207 +542,62 @@ function set_hand () {
 
 ## Step 21
 
-On the third "If" block, click the + button three times and remove the else statement
-In all the "If" blocks place a "receivedString" object on the left side, and a "" block on the right
+Take a "onReceivedNumber" block from the radio tab and place one "If" block in it
+Next you press the + button three times and remove the else statement
 
 ```blocks
-radio.onReceivedString(function (receivedString) {
-    if (receivedString == "ready") {
-        if (ready == 0) {
-            basic.showLeds(`
-                . # # # .
-                # . . . #
-                . . . . #
-                . . # # .
-                . . # . .
-                `)
-        } else {
-            radio.sendString("start-dir")
-            Start()
-        }
-    }
-    if (receivedString == "start-dir") {
-        Start()
-    }
-    if (receivedString == "") {
-        
-    } else if (receivedString == "") {
-        
-    } else if (receivedString == "") {
-        
-    }
-})
-
-function Start () {
-    basic.showNumber(3)
-    basic.pause(1000)
-    basic.showNumber(2)
-    basic.pause(1000)
-    basic.showNumber(1)
-    basic.pause(1000)
-    basic.clearScreen()
-    set_hand()
+radio.onReceivedNumber(function(receivedNumber: number) {
+    if (true) {
+	
+} else if (true) {
+	
+} else if (true) {
+	
 }
 
-function set_hand () {
-    hand_set = 0
-    while (hand_set == 0) {
-        if (input.isGesture(Gesture.TiltLeft)) {
-            basic.showLeds(`
-                . . . . .
-                . # # # .
-                . # # # .
-                . # # # .
-                . . . . .
-                `)
-            hand = "0"
-            hand_set = 1
-        } else if (input.isGesture(Gesture.TiltRight)) {
-            basic.showLeds(`
-                # # . . #
-                # # . # .
-                . . # . .
-                # # . # .
-                # # . . #
-                `)
-            hand = "1"
-            hand_set = 1
-        } else if (input.isGesture(Gesture.LogoUp)) {
-            basic.showLeds(`
-                . # # # .
-                . # # # .
-                . # # # .
-                . # # # .
-                . # # # .
-                `)
-            hand = "2"
-            hand_set = 1
-        }
-    }
-    radio.sendString(hand)
-}
 ```
 
 ## Step 22
 
-In the first "" block you type "0"
+First you drag the receivedNumber object in all statements on the left side
+
+In the first "If" block you type "0"
 In the second you type "1"
 And in the third you type "2"
 
 ```blocks
-radio.onReceivedString(function (receivedString) {
-    if (receivedString == "ready") {
-        if (ready == 0) {
-            basic.showLeds(`
-                . # # # .
-                # . . . #
-                . . . . #
-                . . # # .
-                . . # . .
-                `)
-        } else {
-            radio.sendString("start-dir")
-            Start()
-        }
-    }
-    if (receivedString == "start-dir") {
-        Start()
-    }
-    if (receivedString == "0") {
-        
-    } else if (receivedString == "1") {
-        
-    } else if (receivedString == "2") {
-        
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber == 0) {
+    	
+    } else if (receivedNumber == 1) {
+    	
+    } else if (receivedNumber == 2) {
+    	
     }
 })
-
-function Start () {
-    basic.showNumber(3)
-    basic.pause(1000)
-    basic.showNumber(2)
-    basic.pause(1000)
-    basic.showNumber(1)
-    basic.pause(1000)
-    basic.clearScreen()
-    set_hand()
-}
-
-function set_hand () {
-    hand_set = 0
-    while (hand_set == 0) {
-        if (input.isGesture(Gesture.TiltLeft)) {
-            basic.showLeds(`
-                . . . . .
-                . # # # .
-                . # # # .
-                . # # # .
-                . . . . .
-                `)
-            hand = "0"
-            hand_set = 1
-        } else if (input.isGesture(Gesture.TiltRight)) {
-            basic.showLeds(`
-                # # . . #
-                # # . # .
-                . . # . .
-                # # . # .
-                # # . . #
-                `)
-            hand = "1"
-            hand_set = 1
-        } else if (input.isGesture(Gesture.LogoUp)) {
-            basic.showLeds(`
-                . # # # .
-                . # # # .
-                . # # # .
-                . # # # .
-                . # # # .
-                `)
-            hand = "2"
-            hand_set = 1
-        }
-    }
-    radio.sendString(hand)
-}
 ```
 
 ## Step 23
 
-In the first (third) if block put a:
-"showLeds" block and fill every square.
-Take a "pause (ms) 100" block and place it under.
-Last you take another "showLeds" block and make that your first item. (In this case it's Rock)
-Do this for every "If" block and you will end up with something like this. (Click the light bulb)
+First you make a new function called "Switch"
+Now you put a "showLeds" block and a pause block. Fill the "showLeds" block entirely
+After that you put a "call Switch" block in every "if" block. Then you put a rock, paper and scissors
+picture in each of them.
 
 ```blocks
-radio.onReceivedString(function (receivedString) {
-    if (receivedString == "ready") {
-        if (ready == 0) {
-            basic.showLeds(`
-                . # # # .
-                # . . . #
-                . . . . #
-                . . # # .
-                . . # . .
-                `)
-        } else {
-            radio.sendString("start-dir")
-            Start()
-        }
-    }
-    if (receivedString == "start-dir") {
-        Start()
-    }
-    if (receivedString == "0") {
-        basic.showLeds(`
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            `)
-        basic.pause(100)
+function Switch () {
+    basic.showLeds(`
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        `)
+    basic.pause(100)
+}
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber == 0) {
+        Switch()
         basic.showLeds(`
             . . . . .
             . # # # .
@@ -753,15 +605,17 @@ radio.onReceivedString(function (receivedString) {
             . # # # .
             . . . . .
             `)
-    } else if (receivedString == "1") {
+    } else if (receivedNumber == 1) {
+        Switch()
         basic.showLeds(`
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
+            . # # # .
+            . # # # .
+            . # # # .
+            . # # # .
+            . # # # .
             `)
-        basic.pause(100)
+    } else if (receivedNumber == 2) {
+        Switch()
         basic.showLeds(`
             # # . . #
             # # . # .
@@ -769,77 +623,11 @@ radio.onReceivedString(function (receivedString) {
             # # . # .
             # # . . #
             `)
-    } else if (receivedString == "2") {
-        basic.showLeds(`
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            `)
-        basic.pause(100)
-        basic.showLeds(`
-            . # # # .
-            . # # # .
-            . # # # .
-            . # # # .
-            . # # # .
-            `)
     }
 })
 
-function Start () {
-    basic.showNumber(3)
-    basic.pause(1000)
-    basic.showNumber(2)
-    basic.pause(1000)
-    basic.showNumber(1)
-    basic.pause(1000)
-    basic.clearScreen()
-    set_hand()
-}
-
-function set_hand () {
-    hand_set = 0
-    while (hand_set == 0) {
-        if (input.isGesture(Gesture.TiltLeft)) {
-            basic.showLeds(`
-                . . . . .
-                . # # # .
-                . # # # .
-                . # # # .
-                . . . . .
-                `)
-            hand = "0"
-            hand_set = 1
-        } else if (input.isGesture(Gesture.TiltRight)) {
-            basic.showLeds(`
-                # # . . #
-                # # . # .
-                . . # . .
-                # # . # .
-                # # . . #
-                `)
-            hand = "1"
-            hand_set = 1
-        } else if (input.isGesture(Gesture.LogoUp)) {
-            basic.showLeds(`
-                . # # # .
-                . # # # .
-                . # # # .
-                . # # # .
-                . # # # .
-                `)
-            hand = "2"
-            hand_set = 1
-        }
-    }
-    radio.sendString(hand)
-}
 ```
 
 ## Step 24
 
 That should be everything! Congratulations! Now enjoy your game!
-
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
