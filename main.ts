@@ -1,3 +1,3 @@
-basic.forever(function () {
+dbasic.forever(function () {
 	
 })
